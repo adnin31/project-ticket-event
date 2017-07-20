@@ -42,18 +42,41 @@ router.get('/deletePromotor/:id', (req,res) => {
   })
 })
 
-// router.get('/addEvent/:id', (req, res) => {
-//   model.Promotor
-//   res.render('addEvent', {
-//     title: 'Add Event'
-//   })
-// })
-//
-// router.post('/addEvent', (req,res) => {
-//   model.Event.create(req.body)
-//   .then(row => {res.redirect('/')})
-// })
+router.get('/addEvent/:id', (req, res) => {
+  res.render('addEvent', {
+    title: 'Add Event', id: req.params.id
+  })
+})
 
+router.post('/addEvent/:id', (req,res) => {
+  model.Event.create({
+    event_name: req.body.event_name,
+    category: req.body.category,
+    schedule: req.body.schedule,
+    qty_ticket: req.body.qty_ticket,
+    location: req.body.location,
+    Price: req.body.Price,
+    PromotorId: req.params.id,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  })
+  .then(row => {res.redirect('/promotor')})
+})
+
+router.get('/editEvent/:id',(req,res)=>{
+  model.Event.findById(req.params.id).then(event =>{
+    console.log(event);
+    res.render('editEvent',{
+      title: 'Edit Event', dataEvent : event
+    })
+  })
+})
+
+router.get('/deleteEvent/:id', (req,res) => {
+  model.Event.destroy({where: {id:req.params.id}}).then(event => {
+    res.redirect('/promotor')
+  })
+})
 
 module.exports = router
 
