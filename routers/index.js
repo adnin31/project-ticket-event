@@ -6,25 +6,24 @@ const model = require ('../models');
 
 router.get('/', (req,res)=> {//function for get all event edit by adnin
   model.Event.findAll().then(event =>{
-    // console.log(event);
     res.render('index',{
       title: 'Even Ticket Seller', dataEvent: event
     })
   })
-  // res.send('yuhhuu')
+
 })
 
 
-// router.get('/add-event', (req, res) => { // by dayat
-//   res.render('add-event', {
-//     title: 'Add Event'
-//   })
-// })
-//
-// router.post('/add-event', (req,res) => { // by dayat
-//   model.Event.create(req.body)
-//   .then(row => {res.redirect('/')})
-// })
+router.get('/add-event', (req, res) => { // by dayat
+  res.render('add-event', {
+    title: 'Add Event'
+  })
+})
+
+router.post('/add-event', (req,res) => { // by dayat
+  model.Event.create(req.body)
+  .then(row => {res.redirect('/')})
+})
 
 router.get('/editEvent/:id',(req,res)=>{
   model.Event.findById(req.params.id).then(event =>{

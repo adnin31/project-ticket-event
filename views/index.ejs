@@ -11,6 +11,9 @@
       <h1>Under-construction, please be patient </h1>
     </div>
 
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+
     <table>
       <tr>
         <th>No</th>
@@ -30,18 +33,15 @@
           <td><%=event.schedule%></td>
           <td><%=event.location%></td>
           <td><%=event.qty_ticket%></td>
-          <td><%=event.Price%></td>
-          <td><a href="/editEvent/<%=event.id%>">Edit Event</a>
-              <a href="">Delete</a></td>
+          <td><%=event.price%></td>
           <td>
-            <form action="/buy" method="post">
-                <button type="button" name="buy">Buy Ticket</button>
-            </form>   
+              <button type="button" name="buy" onclick="location.href='/buy/<%=event.id%>'">Login to Buy</button>
           </td>
+
         </tr>
       <%i++})%>
     </table>
-    <a href="/add-event">Add Other Event</a>
+
 
   </body>
 </html>

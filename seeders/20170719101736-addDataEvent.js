@@ -20,7 +20,8 @@ module.exports = {
       location: "Balai syahrini",
       createdAt :new Date(),
       updatedAt :new Date(),
-      Price : "IDR 60000"
+      price : 600000
+
     }, {
       event_name: "Seminar Peredam stress",
       category: "Seminar",

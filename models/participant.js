@@ -5,12 +5,11 @@ module.exports = function(sequelize, DataTypes) {
     phone_number: DataTypes.STRING,
     address: DataTypes.STRING,
     personal_id: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Participant.associate = models => {
+    Participant.hasMany(models.Buyer)
+  }
   return Participant;
 };
+

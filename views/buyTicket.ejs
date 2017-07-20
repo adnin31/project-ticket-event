@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>buytiket</title>
+  </head>
+  <body>
+    <h1>Buy Ticket</h1>
+    <table>
+      <form action="/buy/<%=dataEvent.id%>" method="post">
+        <input type="text" name="jumlah_ticket" placeholder="How Much Ticket ">&nbsp;
+        <select name="listParticipant">
+          <%dataParticipant.forEach(participant=>{%>
+            <option value="<%=participant.id%>"><%=participant.participant_name%></option>
+          <%})%>
+        </select>&nbsp;
+        <select name="listEvent">
+            <option value="<%=dataEvent.id%>"><%=dataEvent.price%> </option>
+        </select>&nbsp;
+        <button type="submit" name="button" value="<%=dataEvent.price%>" >Submit</button>
+      </form>
+    </table><br><br>
+  </body>
+</html>
