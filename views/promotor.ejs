@@ -11,27 +11,35 @@
       <h1>Under-construction, please be patient </h1>
     </div>
     <a href="/promotor/addPromotor">Add Promotor</a>
-    <table>
+    <table class="rwd-table">
       <tr>
         <th>No</th>
         <th>Promotor Name</th>
         <th>Phone Number</th>
         <th>Event Name</th>
         <th>Options</th>
+        <th>Event Options</th>
       </tr>
       <% let i=1 ;dataPromotor.forEach(promotor=>{ %>
         <tr>
+
           <td><%= i++ %></td>
           <td><%=promotor.promotor_name%></td>
           <td><%=promotor.phone_number%></td>
           <td>
+            <%if(promotor.Events.length === 0){%>
+              <a href="promotor/addEvent/<%=promotor.id%>">Add Event</a>
+            <%}%>
             <%let j=1 ;promotor.Events.forEach(event=>{%>
-              <%=j++%>. <%=event.event_name%><br>
+                <%=j++%>. <%=event.event_name%> <a href="promotor/editEvent/<%=event.id%>">Edit</a>
+                <a href="promotor/deleteEvent/<%=event.id%>">Delete</a><br>
             <%})%>
           </td>
 
-          <td><a href="promotor/editPromotor/<%=promotor.id%>">Edit</a>
+          <td><a href="promotor/editPromotor/<%=promotor.id%>">Edit Profile</a> |
               <a href="promotor/deletePromotor/<%=promotor.id%>">Delete</a></td>
+          <td><a href="promotor/addEvent/<%=promotor.id%>">Create New Event</a>
+          </td>
         </tr>
       <%})%>
     </table>
