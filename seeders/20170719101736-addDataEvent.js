@@ -21,6 +21,7 @@ module.exports = {
       createdAt :new Date(),
       updatedAt :new Date(),
       price : 600000
+
     }, {
       event_name: "Seminar Peredam stress",
       category: "Seminar",
@@ -29,7 +30,7 @@ module.exports = {
       location: "gedung patrick star",
       createdAt :new Date(),
       updatedAt :new Date(),
-      price : 24000
+      Price : "IDR 24000"
     },{
         event_name: "Final futsal antar kampung",
         category: "Sports",
@@ -38,7 +39,7 @@ module.exports = {
         location: "gelora bung teja",
         createdAt :new Date(),
         updatedAt :new Date(),
-        price : 10000
+        Price : "IDR 10000"
     }], {});
   },
 

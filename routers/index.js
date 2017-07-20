@@ -10,6 +10,7 @@ router.get('/', (req,res)=> {//function for get all event edit by adnin
       title: 'Even Ticket Seller', dataEvent: event
     })
   })
+
 })
 
 
