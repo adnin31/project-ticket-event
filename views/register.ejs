@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <%-include layout/page-title%>
+    <%- include layout/bootstrapHead%>
+
   </head>
   <body>
+    <%-include layout/navbar%>
     <h1>Register Page</h1>
     <br><br><br><br>
     <center>
@@ -17,6 +20,6 @@
         <button type="submit" name="button">Submit</button>
       </form>
     </center>
-
+    <%-include layout/bootstrapBody%>
   </body>
 </html>
