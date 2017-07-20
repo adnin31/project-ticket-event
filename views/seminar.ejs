@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <%- include layout/page-title %>
+    <%-include layout/page-title%>
     <%- include layout/bootstrapHead%>
   </head>
-
   <body>
-  <%-include layout/navbar%>
+    <%-include layout/navbar%>
     <table class = "table">
       <tr>
         <th>Event Name</th>
@@ -18,7 +17,7 @@
         <th>Price</th>
         <th></th>
       </tr>
-      <% let i=1 ;dataEvent.forEach(event=>{ %>
+      <%dataSeminar.forEach(event=>{%>
         <tr>
           <td><%=event.event_name%></td>
           <td><%=event.category%></td>
@@ -31,8 +30,6 @@
           </td>
         </tr>
       <%})%>
-    </table>
     <%-include layout/bootstrapBody%>
-
   </body>
 </html>

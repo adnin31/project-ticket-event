@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Ngelitick</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <%if(title === 'Music'){%>
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/music">Music</a></li>
+        <li><a href="/sport">Sports</a></li>
+        <li><a href="/seminar">Seminar</a></li>
+      <%}else if(title === 'Sport'){%>
+        <li><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li class="active"><a href="/sport">Sports</a></li>
+        <li><a href="/seminar">Seminar</a></li>
+      <%}else if(title === 'Seminar'){%>
+        <li><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/sport">Sports</a></li>
+        <li class="active"><a href="/seminar">Seminar</a></li>
+      <%}else if(title === 'Home'){%>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/sport">Sports</a></li>
+        <li><a href="/seminar">Seminar</a></li>
+      <%} else {%>
+        <li><a href="/">Home</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/sport">Sports</a></li>
+        <li><a href="/seminar">Seminar</a></li>
+      <%}%>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  </div>
+</nav>

@@ -14,11 +14,17 @@ app.use(bodyParser.json());
 
 const index = require ('./routers/index');
 const buy = require('./routers/buy')
-const  register= require('./routers/register')
+const register= require('./routers/register')
+const music= require('./routers/music')
+const sport= require('./routers/sport')
+const seminar = require('./routers/seminar')
 
 app.use('/', index);
 app.use('/buy',buy);
 app.use('/register',register)
+app.use('/music',music)
+app.use('/sport',sport)
+app.use('/seminar',seminar)
 
 
 
