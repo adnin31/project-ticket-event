@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%- include layout/page-title %>
+    <link type="text/css" rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>Under-construction, please be patient </h1>
+    </div>
+    <a href="/promotor/addPromotor">Add Promotor</a>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Promotor Name</th>
+        <th>Phone Number</th>
+        <th>Event Name</th>
+        <th>Options</th>
+      </tr>
+      <% let i=1 ;dataPromotor.forEach(promotor=>{ %>
+        <tr>
+          <td><%= i++ %></td>
+          <td><%=promotor.promotor_name%></td>
+          <td><%=promotor.phone_number%></td>
+          <td>
+            <%let j=1 ;promotor.Events.forEach(event=>{%>
+              <%=j++%>. <%=event.event_name%><br>
+            <%})%>
+          </td>
+
+          <td><a href="promotor/editPromotor/<%=promotor.id%>">Edit</a>
+              <a href="promotor/deletePromotor/<%=promotor.id%>">Delete</a></td>
+        </tr>
+      <%})%>
+    </table>
+
+  </body>
+</html>

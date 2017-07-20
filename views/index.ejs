@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%- include layout/page-title %>
+    <link type="text/css" rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>Under-construction, please be patient </h1>
+    </div>
+
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Event Name</th>
+        <th>Category</th>
+        <th>Schedule</th>
+        <th>Location</th>
+        <th>Ticket Quantity</th>
+        <th>Price</th>
+        <th>Options</th>
+      </tr>
+      <% let i=1 ;dataEvent.forEach(event=>{ %>
+        <tr>
+          <td><%=i%></td>
+          <td><%=event.event_name%></td>
+          <td><%=event.category%></td>
+          <td><%=event.schedule%></td>
+          <td><%=event.location%></td>
+          <td><%=event.qty_ticket%></td>
+          <td><%=event.Price%></td>
+          <td><a href="/editEvent/<%=event.id%>">Edit Event</a>
+              <a href="">Delete</a></td>
+          <td>
+            <form action="/buy" method="post">
+                <button type="button" name="buy">Buy Ticket</button>
+            </form>   
+          </td>
+        </tr>
+      <%i++})%>
+    </table>
+    <a href="/add-event">Add Other Event</a>
+
+  </body>
+</html>

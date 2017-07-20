@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%- include layout/page-title %>
+    <link type="text/css" rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <h1>Add Promotor Information</h1>
+    <form action="/promotor/addPromotor" method="post">
+      <label>Promotor Name</label><br>
+      <input type="text" name="promotor_name"></input><br><br>
+      <label>Contact Number</label><br>
+        <input type="text" name="phone_number"></input><br><br>
+      <button type="submit">Add Promotor</button>
+    </form>
+  </body>
+</html>

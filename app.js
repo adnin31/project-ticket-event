@@ -13,12 +13,14 @@ app.use(bodyParser.json());
 
 
 const index = require ('./routers/index');
-const buyer = require ('./routers/buyer')
+// const buyer = require ('./routers/buyer')
+const promotor = require ('./routers/promotor');
 
 app.use('/', index);
-app.use('/buyer',buyer)
+// app.use('/buyer',buyer)
+app.use('/promotor',promotor)
 
 
 
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3001);
