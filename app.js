@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 
 
 const index = require ('./routers/index');
-const buyer = require ('./routers/buyer')
+const buy = require('./routers/buy')
 
 app.use('/', index);
-app.use('/buyer',buyer)
+app.use('/buy',buy)
 
 
 
