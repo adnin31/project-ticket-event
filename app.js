@@ -14,9 +14,12 @@ app.use(bodyParser.json());
 
 const index = require ('./routers/index');
 const buy = require('./routers/buy')
+const  register= require('./routers/register')
 
 app.use('/', index);
-app.use('/buy',buy)
+app.use('/buy',buy);
+app.use('/register',register)
+
 
 
 

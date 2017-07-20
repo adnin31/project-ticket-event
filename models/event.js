@@ -6,13 +6,14 @@ module.exports = function(sequelize, DataTypes) {
     qty_ticket: DataTypes.STRING,
     schedule: DataTypes.STRING,
     location: DataTypes.STRING,
-    Price :DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
+    price :DataTypes.INTEGER,
+    PromotorId :DataTypes.INTEGER
   });
+
+  Event.associate = models => {
+    Event.belongsTo(models.Promotor);
+    Event.hasMany(models.Buyer);
+  }
+
   return Event;
 };

@@ -20,7 +20,7 @@ module.exports = {
       location: "Balai syahrini",
       createdAt :new Date(),
       updatedAt :new Date(),
-      Price : "IDR 60000"
+      price : 600000
     }, {
       event_name: "Seminar Peredam stress",
       category: "Seminar",
@@ -29,7 +29,7 @@ module.exports = {
       location: "gedung patrick star",
       createdAt :new Date(),
       updatedAt :new Date(),
-      Price : "IDR 24000"
+      price : 24000
     },{
         event_name: "Final futsal antar kampung",
         category: "Sports",
@@ -38,7 +38,7 @@ module.exports = {
         location: "gelora bung teja",
         createdAt :new Date(),
         updatedAt :new Date(),
-        Price : "IDR 10000"
+        price : 10000
     }], {});
   },
 
