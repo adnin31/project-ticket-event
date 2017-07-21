@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%- include layout/page-title %>
+    <%- include layout/bootstrapHead%>
+
+  </head>
+  <body>
+    <%-include layout/navbar%>
+    <center class="container">
+      <table class="table">
+        <tr>
+          <th><h3>Login</h3></th>
+        </tr>
+        <form class="form-inline" action="/login" method="post">
+          <tr>
+            <td><input type="text" name="username" placeholder="username"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="password" placeholder="password"></td>
+          </tr>
+          <tr>
+            <td><button type="submit" name="button">Submit</button> </td>
+          </tr>
+        </form>
+      </table>
+
+    </center>
+
+
+
+    <%-include layout/bootstrapBody%>
+  </body>
+</html>

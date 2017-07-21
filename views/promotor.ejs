@@ -3,13 +3,11 @@
   <head>
     <meta charset="utf-8">
     <%- include layout/page-title %>
-    <link type="text/css" rel="stylesheet" href="/style.css">
+    <%- include layout/bootstrapHead%>
   </head>
 
   <body>
-    <div class="title">
-      <h1>Under-construction, please be patient </h1>
-    </div>
+    <%-include layout/navbar%>
     <a href="/promotor/addPromotor">Add Promotor</a>
     <table class="rwd-table">
       <tr>
@@ -42,6 +40,7 @@
           </td>
         </tr>
       <%})%>
+      <%-include layout/bootstrapBody%>
     </table>
 
   </body>

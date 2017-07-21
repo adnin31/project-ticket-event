@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
   Event.associate = models => {
     Event.belongsTo(models.Promotor);
     Event.hasMany(models.Buyer);
+    
   }
 
   return Event;

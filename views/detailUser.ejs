@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%-include layout/page-title%>
+    <%- include layout/bootstrapHead%>
+  </head>
+  <body>
+    <%-include layout/navbar%>
+    Detail User
+    <table class="table">
+      <%dataParticipant.forEach(user=>{%>
+        <tr>
+          <td>Name      : <%=user.participant_name%></td>
+          <td>Phone     : <%=user.phone_number%></td>
+          <td> Address  : <%=user.address%></td>
+        </tr>
+      <%})%>
+    </table>
+
+    <h4>Pembelian</h4>
+    <table class="table">
+      <tr>
+        <th>Event Name</th>
+        <th>Jumlah Ticket</th>
+        <th>Total Bayar</th>
+        <th>Tanggal Konser</th>
+      </tr>
+      <%dataBuyer.forEach(buyer=>{%>
+        <tr>
+          <td><%=buyer.Event.event_name%></td>
+          <td><%=buyer.jumlah_ticket%></td>
+          <td><%=buyer.total_bayar%></td>
+          <td><%=buyer.Event.schedule%></td>
+        </tr>
+      <%})%>
+    </table>
+      <%-include layout/bootstrapBody%>
+  </body>
+</html>

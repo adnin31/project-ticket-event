@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
     participant_name: DataTypes.STRING,
     phone_number: DataTypes.STRING,
     address: DataTypes.STRING,
-    personal_id: DataTypes.STRING
+    personal_id: DataTypes.STRING,
+    password:DataTypes.STRING
   });
 
   Participant.associate = models => {
@@ -12,4 +13,3 @@ module.exports = function(sequelize, DataTypes) {
   }
   return Participant;
 };
-
