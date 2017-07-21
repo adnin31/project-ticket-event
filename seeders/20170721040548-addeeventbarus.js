@@ -13,33 +13,33 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert('Events', [{
-      event_name: "Konser budion7",
+      event_name: "Music Nice",
       category: "Music",
-      qty_ticket: "1000",
+      qty_ticket: "1006",
       schedule: "7-april-2018",
       location: "Balai syahrini",
       createdAt :new Date(),
       updatedAt :new Date(),
-      price : 600000
+      price : 200000
 
     }, {
-      event_name: "Seminar Peredam stress",
+      event_name: "Seminar Peredam Ngantuk",
       category: "Seminar",
       qty_ticket: "100",
       schedule: "13-february-2018",
       location: "gedung patrick star",
       createdAt :new Date(),
       updatedAt :new Date(),
-      price : "IDR 24000"
+      price : 24000
     },{
-        event_name: "Final futsal antar kampung",
+        event_name: "Final futsal antar kota",
         category: "Sports",
         qty_ticket: "9000",
         schedule: "13-february-2018",
         location: "gelora bung teja",
         createdAt :new Date(),
         updatedAt :new Date(),
-        price : "IDR 10000"
+        price : 10000
     },{
       event_name: "Konser slank",
       category: "Music",
