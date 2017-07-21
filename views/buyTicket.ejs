@@ -2,23 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>buytiket</title>
+    <%- include layout/page-title %>
+    <%- include layout/bootstrapHead%>
   </head>
   <body>
-    <h1>Buy Ticket</h1>
+    <%-include layout/navbar%>
+    <h3>Ticket <%=dataEvent.event_name%></h3>
     <table>
       <form action="/buy/<%=dataEvent.id%>" method="post">
         <input type="text" name="jumlah_ticket" placeholder="How Much Ticket ">&nbsp;
         <select name="listParticipant">
           <%dataParticipant.forEach(participant=>{%>
-            <option value="<%=participant.id%>"><%=participant.participant_name%></option>
+            <option value="<%=participant.id%>" class="form-control"><%=participant.participant_name%></option>
           <%})%>
         </select>&nbsp;
-        <select name="listEvent">
-            <option value="<%=dataEvent.id%>"><%=dataEvent.price%> </option>
-        </select>&nbsp;
-        <button type="submit" name="button" value="<%=dataEvent.price%>" >Submit</button>
+        <input type="text" name="price" value="<%=dataEvent.price%>" readonly="readonly">
+        &nbsp;
+        <button type="submit" name="button" value="<%=dataEvent.id%>" class="btn btn-success">Buy</button>
       </form>
     </table><br><br>
+    <%-include layout/bootstrapBody%>
   </body>
 </html>

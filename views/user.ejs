@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <%-include layout/page-title%>
+    <%- include layout/bootstrapHead%>
+  </head>
+  <body>
+    <%-include layout/navbar%>
+        <table class="table">
+          <%dataParticipant.forEach(user=>{%>
+            <tr>
+              <td></td><td></td><td></td>
+              <td><h4><%=user.participant_name%></h4></td>
+              <td><button type="button" name="button" onclick="location.href='/user/<%=user.id%>'" class="btn btn-primary">Detail User</button> <%=user.name%></td>
+            </tr>
+          <%})%>
+        </table>
+      <%-include layout/bootstrapBody%>
+  </body>
+</html>

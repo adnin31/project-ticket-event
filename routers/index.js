@@ -13,27 +13,21 @@ router.get('/', (req,res)=> {//function for get all event edit by adnin
 
 })
 
+router.get('/login',(req,res)=>{
+  res.render('login',{title :'Login'})
+})
 
-router.get('/add-event', (req, res) => { // by dayat
-  res.render('add-event', {
-    title: 'Add Event'
+router.post('/login',function(req,res){
+  model.Participant.findOne({
+    where:{participant_name:req.body.username, password : req.body.password}
+  }).
+  then(data=>{
+    if(data){
+      req.session.user = data.participant_name;
+      res.redirect('/')
+    }else {
+      res.send('salah')
+    }
   })
 })
-
-router.post('/add-event', (req,res) => { // by dayat
-  model.Event.create(req.body)
-  .then(row => {res.redirect('/')})
-})
-
-router.get('/editEvent/:id',(req,res)=>{
-  model.Event.findById(req.params.id).then(event =>{
-    console.log(event);
-    res.render('editEvent',{
-      title: 'Edit Event', dataEvent : event
-    })
-  })
-})
-
-
-
 module.exports = router

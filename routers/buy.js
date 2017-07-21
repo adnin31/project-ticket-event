@@ -10,25 +10,20 @@ router.get('/:id', (req,res)=> {//function for get all event edit by adnin
       model.Participant.findAll().then(participant=>{
         model.Event.findById(req.params.id).then(event =>{
           res.render("buyTicket",{dataParticipant : participant , dataEvent: event,
-          dataBuyer :buyer})
+          dataBuyer :buyer , title:"Buy Ticket"})
         })
       })
     })
 
 })
-  function totalharga(ticket,harga) {
-    return ticket * harga
-  }
-  function kurangTicket() {
 
-  }
 
 router.post('/:id', (req,res)=> {//function for get all event edit by adnin
   model.Buyer.create({
     ParticipantId : req.body.listParticipant,
-    EventId : req.body.listEvent,
+    EventId : req.body.button,
     jumlah_ticket :req.body.jumlah_ticket,
-    total_bayar : totalharga(req.body.jumlah_ticket,req.body.button)
+    total_bayar : req.body.jumlah_ticket * req.body.price
   }).then(()=>{
     model.Event.findById(req.params.id).then(event =>{
       model.Event.update({
@@ -38,7 +33,6 @@ router.post('/:id', (req,res)=> {//function for get all event edit by adnin
       }).then(()=>res.redirect("/"))
     })
   })
-
 })
 
 
