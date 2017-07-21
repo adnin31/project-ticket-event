@@ -7,18 +7,7 @@
     "dialect": "postgres",
     "logging": false
   },
-  "test": {
-    "username": "postgres",
-    "password": "12345",
-    "database": "ticketevent",
-    "host": "localhost",
-    "dialect": "postgres"
-  },
   "production": {
-    "username": "postgres",
-    "password": "12345",
-    "database": "ticketevent",
-    "host": "localhost",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
   }
 }
