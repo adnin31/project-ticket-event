@@ -33,6 +33,7 @@ app.use('/register',register)
 app.use('/music',music)
 app.use('/sport',sport)
 app.use('/seminar',seminar)
+app.use('/promotor',promotor)
 app.use((req,res,next) =>{
   if(req.session.user){
     next()
@@ -41,7 +42,7 @@ app.use((req,res,next) =>{
   }
 })
 app.use('/buy',buy);
-app.use('/promotor',promotor)
+
 app.use('/user',user)
 
 

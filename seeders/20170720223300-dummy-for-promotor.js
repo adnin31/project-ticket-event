@@ -18,23 +18,23 @@ module.exports = {
       createdAt :new Date(),
       updatedAt :new Date()
     }, {
-      promotor_name: "Mario Tegar"
-      phone_number: "0882786239"
+      promotor_name: "Mario Tegar",
+      phone_number: "0882786239",
       createdAt :new Date(),
       updatedAt :new Date()
     }, {
-      promotor_name: "Andi Kaskus"
-      phone_number: "0817888005"
+      promotor_name: "Andi Kaskus",
+      phone_number: "0817888005",
       createdAt :new Date(),
       updatedAt :new Date()
     }, {
-      promotor_name: "Adnin Hidayat"
-      phone_number: "0815778779"
+      promotor_name: "Adnin Hidayat",
+      phone_number: "0815778779",
       createdAt :new Date(),
       updatedAt :new Date()
     }, {
-      promotor_name: "Jeng Kellyn"
-      phone_number: "0822112233"
+      promotor_name: "Jeng Kellyn",
+      phone_number: "0822112233",
       createdAt :new Date(),
       updatedAt :new Date()
     }])
