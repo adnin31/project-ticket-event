@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <%- include layout/page-title %>
-
+    <%- include layout/bootstrapHead%>
   </head>
   <body>
+    <%-include layout/navbar%>
     <h1>
       Edit Promotor Info
     </h1>
     <center>
       <form action="/promotor/editPromotor/<%= dataPromotor.id %>" method="post">
-        Promotor Name <br>
-        <input type="text" name="promotor_name" value="<%=dataPromotor.promotor_name%>">
-        <br><br>Contact Number<br>
+        <label>Promotor Name </label><br>
+        <input type="text" name="promotor_name" value="<%=dataPromotor.promotor_name%>" readonly>
+        <br><br><label>Contact Number</label><br>
         <input type="text" name="phone_number" value="<%=dataPromotor.phone_number%>">
-        <br><br><button type="submit" name="button">Update</button>
+        <br><br><button type="submit" name="button" class="btn btn-success">Update</button>
       </form>
     </center>
-
+    <br><br><a href="/promotor">Promotor</a>
+    <%-include layout/bootstrapBody%>
   </body>
 </html>

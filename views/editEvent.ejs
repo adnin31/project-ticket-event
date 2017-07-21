@@ -3,29 +3,35 @@
   <head>
     <meta charset="utf-8">
     <%- include layout/page-title %>
-
+    <%- include layout/bootstrapHead%>
   </head>
   <body>
-    <h1>
-      editEvent
-    </h1>
+    <%-include layout/navbar%>
+    <h1>Edit Event Information</h1>
     <center>
       <form action="/edit/" method="post">
-        Event Name <br>
+        <label>Event Name</label> <br>
         <input type="text" name="eventName" value="<%=dataEvent.event_name%>">
-        <br><br>Category<br>
-        <input type="text" name="category" value="<%=dataEvent.category%>">
-        <br><br>Ticket Quantity<br>
-        <input type="text" name="category" value="<%=dataEvent.qty_ticket%>">
-        <br><br>Schedule<br>
-        <input type="text" name="category" value="<%=dataEvent.schedule%>">
-        <br><br>Location<br>
-        <input type="text" name="category" value="<%=dataEvent.location%>">
-        <br><br>Price<br>
-        <input type="text" name="category" value="<%=dataEvent.Price%>">
-        <br><br><button type="submit" name="button">Submit</button>
+        <br><br><label>Category</label><br>
+        <select name= "category">
+
+          <option value="Music">Music</option>
+          <option value="Seminar">Seminar</option>
+          <option value="Sport">Sport</option>
+
+        </select>
+        <br><br><label>Ticket Quantity</label><br>
+        <input type="text" name="qty_ticket" value="<%=dataEvent.qty_ticket%>">
+        <br><br><label>Schedule</label><br>
+        <input type="date" name="schedule" value="<%=dataEvent.schedule%>">
+        <br><br><label>Location</label><br>
+        <input type="text" name="location" value="<%=dataEvent.location%>">
+        <br><br><label>Ticket Price</label><br>
+        <input type="text" name="price" value="<%=dataEvent.price%>">
+        <br><br><button type="submit" name="button" class="btn btn-success">Update</button>
       </form>
     </center>
-
+    <br><br><a href="/promotor">Promotor</a>
+    <%-include layout/bootstrapBody%>
   </body>
 </html>
