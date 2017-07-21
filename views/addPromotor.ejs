@@ -3,17 +3,22 @@
   <head>
     <meta charset="utf-8">
     <%- include layout/page-title %>
-    <link type="text/css" rel="stylesheet" href="/style.css">
+    <%- include layout/bootstrapHead%>
   </head>
 
   <body>
+    <%-include layout/navbar%>
     <h1>Add Promotor Information</h1>
-    <form action="/promotor/addPromotor" method="post">
-      <label>Promotor Name</label><br>
-      <input type="text" name="promotor_name"></input><br><br>
-      <label>Contact Number</label><br>
-        <input type="text" name="phone_number"></input><br><br>
-      <button type="submit">Add Promotor</button>
-    </form>
+    <center>
+      <form action="/promotor/addPromotor" method="post">
+        <label>Promotor Name</label><br>
+        <input type="text" name="promotor_name"></input><br><br>
+        <label>Contact Number</label><br>
+          <input type="text" name="phone_number"></input><br><br>
+        <button type="submit" class="btn btn-success">Add Promotor</button>
+      </form>
+    </center>
+    <br><br><a href="/promotor">Promotor</a>
+    <%-include layout/bootstrapBody%>
   </body>
 </html>
